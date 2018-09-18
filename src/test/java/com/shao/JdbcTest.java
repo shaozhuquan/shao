@@ -12,7 +12,7 @@ import java.sql.Connection;
 public class JdbcTest {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException  {
-            String URL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf-8";
+            String URL="jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC";
             String USER="root";
             String PASSWORD="root";
             //1.加载驱动程序
