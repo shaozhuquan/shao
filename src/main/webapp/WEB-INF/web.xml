@@ -45,7 +45,7 @@
   </servlet-mapping>
 
   <welcome-file-list>
-    <welcome-file>jsp/user.jsp</welcome-file>
+    <welcome-file>jsp/demo.html</welcome-file>
   </welcome-file-list>
 
   <session-config>
@@ -57,12 +57,5 @@
     <extension>xml</extension>
     <mime-type>text/xml</mime-type>
   </mime-mapping>
-
-  <!-- 默认登录页配置 -->
-  <welcome-file-list>
-    <welcome-file>jsp/public/home.jsp</welcome-file>
-    
-  </welcome-file-list>
-
 </web-app>
 
