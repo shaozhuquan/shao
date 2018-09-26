@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.rmi.CORBA.Util;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -32,5 +33,15 @@ public class UserServiceImpl implements UserService {
         user.setCreateTime(BaseUtils.getCurrentTime());
         user.setEditTime(BaseUtils.getCurrentTime());
         userMapper.saveUser(user);
+    }
+
+    @Override
+    public void updateAgeForId(Map<String,String> map) {
+        userMapper.updateAgeForId(map);
+    }
+
+    @Override
+    public void deleteUserForId(String id) {
+        userMapper.deleteUserForId(id);
     }
 }

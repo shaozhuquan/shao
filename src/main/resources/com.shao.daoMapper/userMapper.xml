@@ -29,4 +29,14 @@
         SELECT *FROM USER WHERE id=#{id};
 
     </select>
+    
+    <update id="updateAgeForId" parameterType="map">
+        UPDATE USER SET age=#{age} WHERE id=#{id};
+
+    </update>
+
+    <delete id="deleteUserForId" parameterType="string">
+        DELETE FROM USER WHERE id=#{id};
+    </delete>
+    
 </mapper>

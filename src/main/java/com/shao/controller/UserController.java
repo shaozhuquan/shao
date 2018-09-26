@@ -60,4 +60,37 @@ public class UserController {
         result.put("user",user);
         return result;
     }
+
+    @ApiOperation(value = "根据ID更新用户年龄")
+    @RequestMapping(value = "/updateAge",method = RequestMethod.POST)
+    public Map<String,Object>updateAge(@RequestBody Map<String,String>map) {
+        boolean res = true;
+        try {
+            userService.updateAgeForId(map);
+        } catch (Exception e){
+            e.printStackTrace();
+            logger.info("updateAge方法报错:"+e.getMessage());
+            res = false;
+        }
+        Map<String,Object>result = new HashMap<>();
+        result.put("res",res);
+        return result;
+    }
+
+    @ApiOperation(value = "根据ID删除用户信息")
+    @RequestMapping(value = "/deleteUser",method = RequestMethod.POST)
+    public Map<String,Object>deleteUser(@RequestParam String id) {
+
+        boolean res = true;
+        try{
+            userService.deleteUserForId(id);
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.info("deleteUser方法报错:"+e.getMessage());
+            res = false;
+        }
+        Map<String,Object> result = new HashMap<>();
+        result.put("res",res);
+        return result;
+    }
 }
