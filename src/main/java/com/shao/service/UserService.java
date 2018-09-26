@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  */
 public interface UserService {
 
-    User getUser();
+    User getUser(String id);
 
     void saveUser(User user);
 }

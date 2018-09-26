@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface UserMapper {
 
     void saveUser(User user);
+
+    User getUser(String id);
 }

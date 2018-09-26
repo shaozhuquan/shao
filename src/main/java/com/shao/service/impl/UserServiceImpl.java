@@ -21,12 +21,9 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public User getUser(){
-        User user = new User();
-        user.setName("shao");
-        user.setSex("男");
-        user.setAge(20);
-        return user;
+    public User getUser(String id){
+
+        return userMapper.getUser(id);
     }
 
     @Override

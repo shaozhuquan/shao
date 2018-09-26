@@ -24,4 +24,9 @@
     	   #{editTime}
         )
     </insert>
+
+    <select id="getUser" parameterType="string" resultType="com.shao.bean.User">
+        SELECT *FROM USER WHERE id=#{id};
+
+    </select>
 </mapper>
