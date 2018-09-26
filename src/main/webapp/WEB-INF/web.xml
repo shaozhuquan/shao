@@ -45,7 +45,7 @@
   </servlet-mapping>
 
   <welcome-file-list>
-    <welcome-file>jsp/demo.html</welcome-file>
+    <welcome-file>jsp/user.jsp</welcome-file>
   </welcome-file-list>
 
   <session-config>
