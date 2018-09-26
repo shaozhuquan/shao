@@ -3,9 +3,13 @@ package com.shao.service.impl;
 import com.shao.bean.User;
 import com.shao.dao.UserMapper;
 import com.shao.service.UserService;
+import com.shao.util.BaseUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
+import javax.rmi.CORBA.Util;
+import java.util.UUID;
 
 /**
  * Created by shaozhuquan on 2018/9/12.
@@ -27,6 +31,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(User user){
+        user.setId(BaseUtils.getUUID());
+        user.setCreateTime(BaseUtils.getCurrentTime());
+        user.setEditTime(BaseUtils.getCurrentTime());
         userMapper.saveUser(user);
     }
 }
