@@ -32,7 +32,7 @@
         
         <!-- 日志输出 -->
         <setting name="logPrefix" value="mybatis."/>
-
+        <!--驼峰转换-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings> 
 </configuration>	
