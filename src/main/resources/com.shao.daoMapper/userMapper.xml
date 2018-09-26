@@ -5,13 +5,23 @@
     <insert id="saveUser" parameterType="com.shao.bean.User">
         INSERT INTO
         user(
+          id,
           `name`,
           age,
-          sex
+          sex,
+          creator,
+          create_time,
+          editor,
+          edit_time
           )VALUES(
+           #{id},
            #{name},
     	   #{age},
-    	   #{sex}
+    	   #{sex},
+    	   #{creator},
+           #{createTime},
+    	   #{editor},
+    	   #{editTime}
         )
     </insert>
 </mapper>
