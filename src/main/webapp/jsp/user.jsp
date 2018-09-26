@@ -6,7 +6,7 @@
 <head>
     <title>用户信息管理</title>
     <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="application"/>
-    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="${contextPath}/skins/skin/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -15,7 +15,7 @@
         用户姓名：<input type="text" name="userName"/>
         用户爱好：<input type="text" name="userHobby">
         旅游目的地：<input type="text" name="travelCity">
-        <input type="submit" class="btn btn-default" value="添加">
+        <input typ e="submit" class="btn btn-default" value="添加">
         <a href="user" class="btn btn-success">用户列表</a>
     </div>
 </form>
@@ -80,7 +80,11 @@
     </c:forEach>
 </table>
 
-<script src="${contextPath}/resources/js/jquery.min.js"></script>
-<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+<div>
+    liu:<input width="10px" height="2px" id="sdfs" class="">
+</div>
+
+<script src="${contextPath}/skins/js/jquery.min.js"></script>
+<script src="${contextPath}/skins/js/bootstrap.min.js"></script>
 </body>
 </html>
