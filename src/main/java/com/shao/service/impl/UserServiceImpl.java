@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.rmi.CORBA.Util;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -43,5 +44,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUserForId(String id) {
         userMapper.deleteUserForId(id);
+    }
+
+    @Override
+    public List<User> getAllUser() {
+        return userMapper.getAllUser();
     }
 }

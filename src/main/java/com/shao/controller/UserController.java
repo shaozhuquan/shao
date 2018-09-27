@@ -9,7 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -91,6 +93,24 @@ public class UserController {
         }
         Map<String,Object> result = new HashMap<>();
         result.put("res",res);
+        return result;
+    }
+
+    @ApiOperation(value = "获取表中所有数据")
+    @RequestMapping(value = "/getAllUser",method = RequestMethod.POST)
+    public Map<String,Object>getAllUser() {
+        boolean res = true;
+        List<User>list = new ArrayList<>();
+        try{
+            list = userService.getAllUser();
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.info("getAllUser方法报错:"+e.getMessage());
+            res = false;
+        }
+        Map<String,Object> result = new HashMap<>();
+        result.put("res",res);
+        result.put("list",list);
         return result;
     }
 }

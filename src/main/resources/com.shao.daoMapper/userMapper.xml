@@ -25,6 +25,8 @@
         )
     </insert>
 
+
+
     <select id="getUser" parameterType="string" resultType="com.shao.bean.User">
         SELECT *FROM USER WHERE id=#{id};
 
@@ -38,5 +40,10 @@
     <delete id="deleteUserForId" parameterType="string">
         DELETE FROM USER WHERE id=#{id};
     </delete>
-    
+
+    <select id="getAllUser" resultType="com.shao.bean.User">
+        select *from user;
+
+    </select>
+
 </mapper>

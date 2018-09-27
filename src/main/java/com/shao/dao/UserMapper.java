@@ -3,6 +3,7 @@ package com.shao.dao;
 import com.shao.bean.User;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,4 +19,6 @@ public interface UserMapper {
     void updateAgeForId(Map<String,String> map);
 
     void deleteUserForId(String id);
+
+    List<User>getAllUser();
 }
