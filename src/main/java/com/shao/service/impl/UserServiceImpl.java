@@ -5,13 +5,10 @@ import com.shao.dao.UserMapper;
 import com.shao.service.UserService;
 import com.shao.util.BaseUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import javax.rmi.CORBA.Util;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * Created by shaozhuquan on 2018/9/12.
