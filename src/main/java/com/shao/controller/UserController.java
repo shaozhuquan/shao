@@ -1,5 +1,6 @@
 package com.shao.controller;
 
+import com.shao.bean.Email;
 import com.shao.bean.User;
 import com.shao.service.UserService;
 import io.swagger.annotations.Api;
@@ -113,4 +114,21 @@ public class UserController {
         result.put("list",list);
         return result;
     }
+
+    @ApiOperation(value = "发送邮件")
+    @RequestMapping(value = "/sendEmail",method = RequestMethod.POST)
+    public Map<String,Object>sendEmail(@RequestBody Email email) {
+        boolean res = true;
+        try{
+            userService.sendEmail(email);
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.info("sendEmail方法报错:"+e.getMessage());
+            res = false;
+        }
+        Map<String,Object> result = new HashMap<>();
+        result.put("res",res);
+        return result;
+    }
+
 }
