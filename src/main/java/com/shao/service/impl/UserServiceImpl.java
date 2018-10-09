@@ -1,9 +1,12 @@
 package com.shao.service.impl;
 
+import com.shao.bean.Email;
 import com.shao.bean.User;
 import com.shao.dao.UserMapper;
 import com.shao.service.UserService;
 import com.shao.util.BaseUtils;
+import com.shao.util.email.DefaultMailOperation;
+import com.shao.util.email.MailOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,5 +49,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAllUser() {
         return userMapper.getAllUser();
+    }
+
+    @Override
+    public void sendEmail(Email email) throws Exception {
+
+        MailOperation mail = new DefaultMailOperation();
+        //邮件服务器信息
+        String serverAddress = email.getServerAddress();
+        String sendAddress = email.getSendAddress();
+        String[] acceptAddress = email.getAcceptAddress();
+        String sendPort = email.getSendPort();
+        String userName = email.getUserName();
+        String password = email.getPassword();
+        mail.doSendMail(userName,password,serverAddress,sendPort,sendAddress,acceptAddress,"测试发送邮件","test");
+
+
     }
 }

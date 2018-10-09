@@ -1,5 +1,6 @@
 package com.shao.service;
 
+import com.shao.bean.Email;
 import com.shao.bean.User;
 import org.springframework.stereotype.Repository;
 
@@ -20,4 +21,6 @@ public interface UserService {
     void deleteUserForId(String id);
 
     List<User> getAllUser();
+
+    void sendEmail(Email email) throws Exception;
 }
