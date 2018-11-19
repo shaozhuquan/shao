@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by shaozhuquan on 2018/9/12.
@@ -62,8 +63,9 @@ public class UserServiceImpl implements UserService {
         String sendPort = email.getSendPort();
         String userName = email.getUserName();
         String password = email.getPassword();
-        mail.doSendMail(userName,password,serverAddress,sendPort,sendAddress,acceptAddress,"测试发送邮件","test");
-
+        String subject = email.getSubject();
+        String content = email.getContent();
+        mail.doSendMail(userName,password,serverAddress,sendPort,sendAddress,acceptAddress,subject,content);
 
     }
 }
