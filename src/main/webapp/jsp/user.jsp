@@ -7,15 +7,68 @@
     <title>用户信息管理</title>
     <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="application"/>
     <link href="${contextPath}/skins/skin/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="${contextPath}/skins/skin/css/public.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="container">
+    <div class="addContainer">
+        <form class="form-horizontal" id="saveForm" onsubmit="return false">
+            <div class="form-group">
+                <label class="col-xs-3 control-label text-right">发送地址<span class="required">*</span></label>
+                <div class="col-xs-5">
+                    <input type="text" class="" id="sendAddress" datatype="" value="" nullmsg="" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label text-right">服务地址<span class="required">*</span></label>
+                <div class="col-xs-5">
+                    <input type="text" class="" id="serverAddress" disabled datatype="" value="smtp.163.com" nullmsg="" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label text-right">发送端口<span class="required">*</span></label>
+                <div class="col-xs-5">
+                    <input type="text" class="" id="sendPort" datatype="" disabled value="25" nullmsg="" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label text-right">用户名<span class="required">*</span></label>
+                <div class="col-xs-5">
+                    <input type="text" class="" id="userName" datatype="" value="" nullmsg="" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label text-right">密码<span class="required">*</span></label>
+                <div class="col-xs-5">
+                    <input type="password" class="" id="password" datatype="" value="" nullmsg="" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label text-right">主题<span class="required">*</span></label>
+                <div class="col-xs-5">
+                    <input type="text" class="" id="subject" datatype="" value="" nullmsg="" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-3 control-label text-right">内容<span class="required">*</span></label>
+                <div class="col-xs-5">
+                    <textarea rows="5" cols="22"></textarea>
+                </div>
+            </div>
+        </form>
+        <button type="button" class="btn" id="send" style="position: relative; left: 40%">发送</button>
+    </div>
+</body>
 
-<form action="add" id="addForm" method="post">
+
+
+
+
+<%--<form action="add" id="addForm" method="post">
     <div class="form-group">
         用户姓名：<input type="text" name="userName"/>
         用户爱好：<input type="text" name="userHobby">
         旅游目的地：<input type="text" name="travelCity">
-        <input typ e="submit" class="btn btn-default" value="添加">
+        <input type="submit" class="btn btn-default" value="添加">
         <a href="user" class="btn btn-success">用户列表</a>
     </div>
 </form>
@@ -82,7 +135,7 @@
 
 <div>
     liu:<input width="10px" height="2px" id="sdfs" class="">
-</div>
+</div>--%>
 
 <script src="${contextPath}/skins/js/jquery.min.js"></script>
 <script src="${contextPath}/skins/js/bootstrap.min.js"></script>
