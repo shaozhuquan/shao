@@ -10,6 +10,24 @@ public class Email {
     private String sendPort;
     private String userName;
     private String password;
+    private String subject;
+    private String content;
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public String getServerAddress() {
         return serverAddress;
