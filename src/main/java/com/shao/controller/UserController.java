@@ -117,7 +117,7 @@ public class UserController {
 
     @ApiOperation(value = "发送邮件")
     @RequestMapping(value = "/sendEmail",method = RequestMethod.POST)
-    public Map<String,Object>sendEmail(@RequestBody Email email) {
+    public Map<String,Object> sendEmail(@RequestBody Email email) {
         boolean res = true;
         try{
             userService.sendEmail(email);
