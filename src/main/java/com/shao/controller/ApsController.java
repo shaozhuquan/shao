@@ -1,12 +1,17 @@
 package com.shao.controller;
 
 import com.shao.util.aps.apsUtils;
+import com.utils.SerialNoGen;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +22,11 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping(value = "aps")
+@Import(SerialNoGen.class)
 public class ApsController {
+
+    @Autowired
+    private SerialNoGen serialNoGen;
 
     @RequestMapping(value = "/demo", method = RequestMethod.GET)
     public Map<String,Object> test(HttpServletRequest request, HttpServletResponse response){
@@ -37,4 +46,9 @@ public class ApsController {
         return result;
     }
 
+    @RequestMapping(value = "/getSerialNo", method = RequestMethod.GET)
+    public String getSerialNo(@RequestParam int type) throws SQLException {
+        return serialNoGen.getNextMno(type);
+       // return null;
+    }
 }
