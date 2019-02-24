@@ -5,13 +5,45 @@
     <insert id="saveUser" parameterType="com.shao.bean.User">
         INSERT INTO
         user(
+          id,
           `name`,
           age,
-          sex
+          sex,
+          creator,
+          create_time,
+          editor,
+          edit_time
           )VALUES(
+           #{id},
            #{name},
     	   #{age},
-    	   #{sex}
+    	   #{sex},
+    	   #{creator},
+           #{createTime},
+    	   #{editor},
+    	   #{editTime}
         )
     </insert>
+
+
+
+    <select id="getUser" parameterType="string" resultType="com.shao.bean.User">
+        SELECT *FROM USER WHERE id=#{id};
+
+    </select>
+    
+    <update id="updateAgeForId" parameterType="map">
+        UPDATE USER SET age=#{age} WHERE id=#{id};
+
+    </update>
+
+    <delete id="deleteUserForId" parameterType="string">
+        DELETE FROM USER WHERE id=#{id};
+    </delete>
+
+    <select id="getAllUser" resultType="com.shao.bean.User">
+        select *from user;
+
+    </select>
+
 </mapper>
