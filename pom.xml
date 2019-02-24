@@ -173,5 +173,33 @@
           <version>1.4.1</version>
       </dependency>
 
+      <dependency>
+          <groupId>com.shao</groupId>
+          <artifactId>SerialNoGen</artifactId>
+          <version>1.0.0</version>
+      </dependency>
+
+      <!--excel-->
+      <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-scratchpad</artifactId>
+          <version>3.11-beta2</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml</artifactId>
+          <version>3.11-beta2</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml-schemas</artifactId>
+          <version>3.11-beta2</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-excelant</artifactId>
+          <version>3.11-beta2</version>
+      </dependency>
+
   </dependencies>
 </project>
